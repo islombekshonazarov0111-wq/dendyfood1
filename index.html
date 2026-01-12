@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restoran Popup Sayt</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Popup -->
+<div id="popup" class="popup">
+    <div class="popup-content">
+        <span class="close-btn" id="closePopup">&times;</span>
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="menu">Menu</button>
+            <button class="tab-btn" data-tab="orders">Zakazlarim tarixi</button>
+            <button class="tab-btn" data-tab="contact">Murojat</button>
+        </div>
+
+        <!-- Menu tab -->
+        <div class="tab-content" id="menu">
+            <div class="category-tabs">
+                <button class="category-btn active" data-category="foods">Taomlar</button>
+                <button class="category-btn" data-category="drinks">Ichimliklar</button>
+            </div>
+            <div class="products" id="foods">
+                <div class="product-card">
+                    <img src="images/placeholder.png" alt="Pitsa Peperoni">
+                    <h3>Pitsa Peperoni</h3>
+                    <p>120 000 so'm</p>
+                    <button class="buy-btn" data-name="Pitsa Peperoni" data-price="120000">Sotib olish</button>
+                </div>
+            </div>
+            <div class="products" id="drinks" style="display:none;">
+                <div class="product-card">
+                    <img src="images/placeholder.png" alt="Cola 1.5L">
+                    <h3>Cola 1.5L</h3>
+                    <p>15 000 so'm</p>
+                    <button class="buy-btn" data-name="Cola 1.5L" data-price="15000">Sotib olish</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Orders tab -->
+        <div class="tab-content" id="orders" style="display:none;">
+            <p>Bu yerda foydalanuvchi buyurtmalari tarixi ko‘rinadi.</p>
+        </div>
+
+        <!-- Contact tab -->
+        <div class="tab-content" id="contact" style="display:none;">
+            <p>Telefon: <a href="tel:+998930940777">+998930940777</a></p>
+        </div>
+
+        <!-- Buyurtma Form -->
+        <div id="orderFormContainer" style="display:none; margin-top:15px;">
+            <h3>Buyurtma berish</h3>
+            <form id="orderForm">
+                <label>Ism:</label>
+                <input type="text" id="customerName" required><br><br>
+                <label>Telefon:</label>
+                <input type="tel" id="customerPhone" required><br><br>
+                <label>Mahsulot:</label>
+                <input type="text" id="productName" readonly><br><br>
+                <label>Narx:</label>
+                <input type="text" id="productPrice" readonly><br><br>
+                <label>To‘lov turi:</label><br>
+                <input type="radio" name="paymentType" value="Naqd" checked> Naqd<br>
+                <input type="radio" name="paymentType" value="Online"> Online<br><br>
+                <div id="paymentUpload" style="display:none;">
+                    <label>To‘lov kvitansiya rasmini yuklang:</label>
+                    <input type="file" id="paymentImage" accept="image/*"><br><br>
+                </div>
+                <button type="submit">Buyurtma qilish</button>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
